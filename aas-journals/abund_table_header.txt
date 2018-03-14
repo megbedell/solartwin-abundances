@@ -1,0 +1,43 @@
+1 & Star & & Star identifier \\
+2 & [C \I /H] & dex & \\ 
+3 & u\_[CI /H] & dex & Estimated uncertainty \\ 
+4 & [CH /H] & dex & \\ 
+5 & u\_[CH /H] & dex & Estimated uncertainty \\ 
+6 & [O \I /H] & dex & \\ 
+7 & u\_[OI /H] & dex & Estimated uncertainty \\ 
+8 & [Na \I /H] & dex & \\ 
+9 & u\_[NaI /H] & dex & Estimated uncertainty \\ 
+10 & [Mg \I /H] & dex & \\ 
+11 & u\_[MgI /H] & dex & Estimated uncertainty \\ 
+12 & [Al \I /H] & dex & \\ 
+13 & u\_[AlI /H] & dex & Estimated uncertainty \\ 
+14 & [Si \I /H] & dex & \\ 
+15 & u\_[SiI /H] & dex & Estimated uncertainty \\ 
+16 & [S \I /H] & dex & \\ 
+17 & u\_[SI /H] & dex & Estimated uncertainty \\ 
+18 & [Ca \I /H] & dex & \\ 
+19 & u\_[CaI /H] & dex & Estimated uncertainty \\ 
+20 & [Sc \I /H] & dex & \\ 
+21 & u\_[ScI /H] & dex & Estimated uncertainty \\ 
+22 & [Sc \II /H] & dex & \\ 
+23 & u\_[ScII /H] & dex & Estimated uncertainty \\ 
+24 & [Ti \I /H] & dex & \\ 
+25 & u\_[TiI /H] & dex & Estimated uncertainty \\ 
+26 & [Ti \II /H] & dex & \\ 
+27 & u\_[TiII /H] & dex & Estimated uncertainty \\ 
+28 & [V \I /H] & dex & \\ 
+29 & u\_[VI /H] & dex & Estimated uncertainty \\ 
+30 & [Cr \I /H] & dex & \\ 
+31 & u\_[CrI /H] & dex & Estimated uncertainty \\ 
+32 & [Cr \II /H] & dex & \\ 
+33 & u\_[CrII /H] & dex & Estimated uncertainty \\ 
+34 & [Mn \I /H] & dex & \\ 
+35 & u\_[MnI /H] & dex & Estimated uncertainty \\ 
+36 & [Co \I /H] & dex & \\ 
+37 & u\_[CoI /H] & dex & Estimated uncertainty \\ 
+38 & [Ni \I /H] & dex & \\ 
+39 & u\_[NiI /H] & dex & Estimated uncertainty \\ 
+40 & [Cu \I /H] & dex & \\ 
+41 & u\_[CuI /H] & dex & Estimated uncertainty \\ 
+42 & [Zn \I /H] & dex & \\ 
+43 & u\_[ZnI /H] & dex & Estimated uncertainty \\ 
