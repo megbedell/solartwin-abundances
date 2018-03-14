@@ -8,12 +8,12 @@ def linear(x, m, b):
      model = m*x + b
      return model
      
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-a = np.genfromtxt(root_dir+'final_abundances.csv', delimiter=',', dtype=None, names=True)
-par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True)
-nissen_oxygen = np.genfromtxt("nissen_oxygen.txt", dtype=None, names=True)
+root_dir = '../data/'
+a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
+par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True, encoding=None)
+nissen_oxygen = np.genfromtxt("nissen_oxygen.txt", dtype=None, names=True, encoding=None)
 
-nissen = np.genfromtxt("nissen.txt", delimiter='\t', dtype=None, names=True)
+nissen = np.genfromtxt("nissen.txt", delimiter='\t', dtype=None, names=True, encoding=None)
 nissen_mask = []
 mask = []
 conv = identifiers.Converter()
@@ -22,7 +22,7 @@ for i,hdname in enumerate(nissen['Star']):
     hipnumber = conv.hdtohip(hdnumber)
     hipname = 'HIP' + str(hipnumber)
     if hipname in a['id']:
-        print '{0} == {1}'.format(hdname, hipname)
+        print('{0} == {1}'.format(hdname, hipname))
         nissen_mask = np.append(nissen_mask, i)
         mask = np.append(mask, np.where(a['id'] == hipname)[0][0])
         
@@ -44,14 +44,14 @@ nissen_errors = [0.013, 0.0, 0.007, 0.006]
 for i,el in enumerate(elements):
     ax = fig.add_subplot(2,2,i+1)
 
-    abund = a[el+"I_1"][mask]
-    err = a["err_"+el+"I"][mask]
+    abund = a["{0}I_1".format(el)][mask]
+    err = a["err_{0}I".format(el)][mask]
     if el == 'C':
         abunds = [a['CI_1'][mask], a['CH_1'][mask]]
         errs = [a['err_CI'][mask], a['err_CH'][mask]]
         (abund, err) = np.average(abunds, weights=errs, returned=True, axis=0) 
     
-    abund_nissen = nissen[el+'Fe'][nissen_mask] + nissen['FeH'][nissen_mask]
+    abund_nissen = nissen['{0}Fe'.format(el)][nissen_mask] + nissen['FeH'][nissen_mask]
    
     if el == 'O':
         err_nissen = nissen_oxygen['sigma'][nissen_mask]

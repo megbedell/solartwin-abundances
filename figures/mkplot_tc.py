@@ -12,13 +12,13 @@ def broken_line(x, m2, m1, b2, b1):
     x_break = (b2 - b1) / (m1 - m2)
     return np.where(x < x_break, m1*x + b1, m2*x + b2)
 
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True)
-par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True)
-gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True)
-a_gce = np.genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
+par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True, encoding=None)
+gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True, encoding=None)
+a_gce = np.genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
-tc_all = np.genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture.csv', delimiter=',', dtype=None, names=True)
+tc_all = np.genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
 c1 = 'black'
 c2 = '#003399' # blue
@@ -73,9 +73,9 @@ for (s,ax) in zip(stars, [ax1, ax2, ax3]):
     popt2, pcov2 = curve_fit(broken_line, Tc, abund, sigma=err, p0=p0)
     xs2 = np.arange(100., 1800., 10) # plotting
     
-    ax.errorbar(Tc, abund, err, fmt='o', color='k', mec='k', markersize=5)
-    ax.plot(xs, linear(xs, *popt), color=c2)
-    ax.plot(xs2, broken_line(xs2, *popt2), color=c3, ls='--')
+    ax.errorbar(Tc, abund, err, fmt='o', color='k', mec='k', markersize=5, lw=2)
+    ax.plot(xs, linear(xs, *popt), color=c2, lw=2)
+    ax.plot(xs2, broken_line(xs2, *popt2), color=c3, ls='--', lw=2)
     
     
     ax.set_xticks(np.arange(0,1800,500))

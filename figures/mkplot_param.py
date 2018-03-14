@@ -2,8 +2,8 @@ import numpy as np
 from numpy import genfromtxt
 import matplotlib.pyplot as plt
 
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-b = genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+b = genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True, encoding=None)
 #ages = genfromtxt(root_dir+'final_ages_combination.csv', delimiter=',', dtype=None, names=True)
 
 fig,((ax1,ax2),(ax3,ax4)) = plt.subplots(2,2,figsize=(16,16))
@@ -50,4 +50,4 @@ fig.savefig('param_hist.pdf')
 
 twins = (b['teff'] >= 5678.) & (b['teff'] <= 5878.) & (b['logg'] >= 4.34) & \
         (b['logg'] <= 4.54) & (b['feh'] >= -0.1) & (b['feh'] <= 0.1)
-print np.sum(twins)
+print(np.sum(twins))

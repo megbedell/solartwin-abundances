@@ -6,29 +6,29 @@ def linear(x, m, b):
      model = m*x + b
      return model
 
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-par = np.genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True)
-ages = np.genfromtxt(root_dir+'final_ages_combination.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+par = np.genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True, encoding=None)
+ages = np.genfromtxt(root_dir+'final_ages_combination.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
-a = np.genfromtxt(root_dir+'final_abundances.csv', delimiter=',', dtype=None, names=True)  
+a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)  
 
 thin = [i not in ['HIP19911', 'HIP108158', 'HIP109821', 'HIP115577', 'HIP14501', 'HIP28066', 'HIP30476',
                     'HIP33094', 'HIP65708', 'HIP73241', 'HIP74432'] for i in a['id'][:-1]] # mask out SB2, thick-disk
 thick = np.invert(thin)  
 
 adibekyan = np.genfromtxt('/Users/mbedell/Documents/Research/Stars/HARPS_GTO/Adibekyan2012/abundances.csv', dtype=None,
-            delimiter=',', usecols=(9, 10, 16, 17), names=('mg', 'mg_err', 'si', 'si_err'))
+            delimiter=',', usecols=(9, 10, 16, 17), names=('mg', 'mg_err', 'si', 'si_err'), encoding=None)
 #brewer = np.genfromtxt('/Users/mbedell/Documents/Research/Stars/Brewer/brewer2016.csv', dtype=None,
 #            names=True, delimiter=',')
 
 brewer = np.genfromtxt('/Users/mbedell/Documents/Research/Stars/Brewer/table_9_full_bedell.csv', dtype=None,
-            names=True, delimiter=',')
+            names=True, delimiter=',', encoding=None)
 bmask = (brewer['MH'] <= 0.15) & (brewer['MH'] >= -0.15) & \
         (brewer['logg'] >= 3.5)
 
 #        (brewer['Teff'] <= 6100.) & (brewer['Teff'] >= 5500.) & \
 brewer = brewer[bmask]
-print "{0} stars selected from Brewer".format(np.sum(bmask))
+print("{0} stars selected from Brewer".format(np.sum(bmask)))
 
 
 age = ages['age_mean']

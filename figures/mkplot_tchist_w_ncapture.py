@@ -3,7 +3,6 @@ from numpy import genfromtxt
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.stats import gaussian_kde
-from statsmodels.nonparametric.kernel_density import KDEMultivariate
 from matplotlib.ticker import FormatStrFormatter
 
 def linear(x, m, b):
@@ -20,21 +19,21 @@ def percentile_uncertainty(value, xs, sigmas, Ntrial=1024):
         percentiles[trial] = np.sum(thisxs <= value) * 100. / N
     return percentiles
      
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-a = genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True)
-par = genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True)
-gce = genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True)
-a_gce = genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+a = genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
+par = genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True, encoding=None)
+gce = genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True, encoding=None)
+a_gce = genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
-tc_all = genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture.csv', delimiter=',', dtype=None, names=True)
-tc_all_pw = genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture_pw.csv', delimiter=',', dtype=None, names=True)
+tc_all = genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
+tc_all_pw = genfromtxt(root_dir+'Tc/harpstwins_tcslopes_w_ncapture_pw.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
 
 if True:
     fit = [i not in ['HIP19911', 'HIP108158', 'HIP109821', 'HIP115577', 'HIP14501', 'HIP28066', 'HIP30476',
                     'HIP33094', 'HIP65708', 'HIP73241', 'HIP74432', 'HIP64150'] for i in a['id'][:-1]] # mask out SB2, thick-disk
     inv = np.invert(fit)  
-    print "{0} stars used; excluding {1} thick-disk or otherwise atypical stars".format(np.sum(fit), np.sum(inv))
+    print("{0} stars used; excluding {1} thick-disk or otherwise atypical stars".format(np.sum(fit), np.sum(inv)))
 
 tc_slopes_nov = tc_all['tc_slope_nov']
 tc_slope_errs_nov = tc_all['tc_slope_err_nov']
@@ -50,12 +49,12 @@ if False: # use piecewise instead
 percentiles = percentile_uncertainty(0.0, tc_slopes_gce_nov, tc_slope_errs_gce_nov)
 
 
-print "{0} stars of {1} total have Tc slopes at or below the Solar value after GCE correction.".format(np.sum(tc_slopes_nov <= 0.0), len(tc_slopes_nov))
-print "The Sun lies at the {0:.1f} percentile before GCE corrections".format(np.sum(tc_slopes_nov <= 0.0)*100. / len(tc_slopes_nov))
-print "{0} stars of {1} total have Tc slopes at or below the Solar value after GCE correction.".format(np.sum(tc_slopes_gce_nov <= 0.0), len(tc_slopes_gce_nov))
-print "The Sun lies at the {0:.1f} percentile after GCE corrections".format(np.sum(tc_slopes_gce_nov <= 0.0)*100. / len(tc_slopes_gce_nov))
-print "The uncertainty on this is: {0:.1f} +- {1:.1f}".format(np.mean(percentiles), np.std(percentiles))
-print "At 95% confidence, the Sun is below the {0:.1f}th percentile.".format(np.percentile(percentiles, 95))
+print("{0} stars of {1} total have Tc slopes at or below the Solar value after GCE correction.".format(np.sum(tc_slopes_nov <= 0.0), len(tc_slopes_nov)))
+print("The Sun lies at the {0:.1f} percentile before GCE corrections".format(np.sum(tc_slopes_nov <= 0.0)*100. / len(tc_slopes_nov)))
+print("{0} stars of {1} total have Tc slopes at or below the Solar value after GCE correction.".format(np.sum(tc_slopes_gce_nov <= 0.0), len(tc_slopes_gce_nov)))
+print("The Sun lies at the {0:.1f} percentile after GCE corrections".format(np.sum(tc_slopes_gce_nov <= 0.0)*100. / len(tc_slopes_gce_nov)))
+print("The uncertainty on this is: {0:.1f} +- {1:.1f}".format(np.mean(percentiles), np.std(percentiles)))
+print("At 95% confidence, the Sun is below the {0:.1f}th percentile.".format(np.percentile(percentiles, 95)))
 
 c1 = 'black'
 c2 = '#003399' # blue
@@ -100,8 +99,8 @@ if False:
         #kde = KDEMultivariate(data, var_type='c', bw='normal_reference')
         #percents[i] = kde.cdf([0.0])*100.
         percents[i] = np.sum(data <= 0.0) * 100./len(tc_slopes_nov)
-    print "before GCE:"
-    print np.mean(percents), np.std(percents)
+    print("before GCE:")
+    print(np.mean(percents), np.std(percents))
 
 if False:
     n = 10000
@@ -111,6 +110,6 @@ if False:
         #kde = KDEMultivariate(data, var_type='c', bw='normal_reference')
         #percents[i] = kde.cdf([0.0])*100.
         percents[i] = np.sum(data <= 0.0) * 100./len(tc_slopes_gce_nov)
-    print "after GCE:"
-    print np.mean(percents), np.std(percents)
+    print("after GCE:")
+    print(np.mean(percents), np.std(percents))
 

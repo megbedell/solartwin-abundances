@@ -7,18 +7,18 @@ def linear(x, m, b):
      model = m*x + b
      return model
      
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-par = np.genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+par = np.genfromtxt(root_dir+'final_parameters.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
-a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True) 
-gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True)
-a_gce = np.genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True)
+a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None) 
+gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True, encoding=None)
+a_gce = np.genfromtxt(root_dir+'GCE/harpstwins_gcecorrected_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
 
 fit = [i not in ['HIP19911', 'HIP108158', 'HIP109821', 'HIP115577', 'HIP14501', 'HIP28066', 'HIP30476',
             'HIP33094', 'HIP65708', 'HIP73241', 'HIP74432', 'HIP64150'] for i in a['id'][:-1]] # mask out SB2, thick-disk
 inv = np.invert(fit)  
-print "{0} stars used; excluding {1} thick-disk or otherwise atypical stars".format(np.sum(fit), np.sum(inv))
+print("{0} stars used; excluding {1} thick-disk or otherwise atypical stars".format(np.sum(fit), np.sum(inv)))
 
 sp_names = gce['element']
 Tc = np.asarray([q2.abundances.gettc(x) for x in sp_names])
@@ -36,7 +36,7 @@ for i,el in enumerate(sp_names):
     abund_gce[i] = np.log10(np.nanmean(np.power(10., a_gce[el+"Fe"][fit])))
     err_gce[i] = np.nanstd(a_gce[el+"Fe"][fit])/np.sqrt(n_stars_gce - 1.) # hack
     
-    print "species {0}: median error bar {1:.4f} dex".format(el, np.median(a["err_"+el][:-1]))
+    print("species {0}: median error bar {1:.4f} dex".format(el, np.median(a["err_"+el][:-1])))
 
     
 for t in set(Tc):
@@ -67,13 +67,11 @@ ref = Tc >= 800.
 ax.errorbar(Tc, -abund, yerr=err, fmt='o', markersize=6, c=c2, label='before GCE corrections')
 
 popt, pcov = curve_fit(linear, Tc[ref], -abund[ref], sigma=err[ref])
-print popt
 ax.plot(xs, popt[0]*xs+popt[1], c=c2)
 
 ax.errorbar(Tc, -abund_gce, yerr=err_gce, fmt='^', markersize=8, c=c4, label='after GCE corrections')
 
 popt, pcov = curve_fit(linear, Tc[ref], -abund_gce[ref], sigma=err_gce[ref])
-print popt
 ax.plot(xs, popt[0]*xs+popt[1], c=c4)
 
 names = np.asarray(['C', 'O', 'Na', 'Mg', 'Al', 'Si', 'S', 'Ca', 'Sc',

@@ -9,12 +9,12 @@ def linear(x, m, b):
      model = m*x + b
      return model
      
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-a = genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True)
+root_dir = '../data/'
+a = genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
 #data = q2.Data(root_dir+"final_parameters.csv",root_dir+"harpstwins_lines.csv")
-par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True)
-gce = genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True)
-ages = np.genfromtxt(root_dir+'final_ages_combination.csv', delimiter=',', dtype=None, names=True)
+par = np.genfromtxt(root_dir+"final_parameters.csv", delimiter=',', dtype=None, names=True, encoding=None)
+gce = genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True, encoding=None)
+ages = np.genfromtxt(root_dir+'final_ages_combination.csv', delimiter=',', dtype=None, names=True, encoding=None)
 
 age = ages['age_mean']
 age_err = ages['age_std']
