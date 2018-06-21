@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from scipy.optimize import curve_fit
 import q2
 
@@ -57,6 +58,7 @@ for t in set(Tc):
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
+mpl.rcParams['axes.linewidth'] = 1.5 #set the value globally
 
 c2 = '#003399' # blue
 c3 = '#CC0033' # red
@@ -84,15 +86,16 @@ for i, txt in enumerate(names):
     x_txt, y_txt = Tc[i], max(-abund[i], -abund_gce[i]) + 0.02
     if txt in ['C', 'Ni', 'Y', 'Zr']:
         y_txt += 0.004
-    if txt in ['Ti', 'Ce', 'Cu']:
-        y_txt += 0.008
-    if txt in [ 'Gd', 'Sc']:
+    if txt in ['Ti', 'Ce']:
+        y_txt += 0.00
+    if txt in ['Cu']:
         y_txt += 0.012
     if txt in ['Sc']:
+        y_txt += 0.016
         x_txt -= 40
     if txt in ['Mg']:
         y_txt += 0.012
-        x_txt -= 30
+        x_txt -= 50
     if txt in ['Ni']:
         x_txt -= 40
     if txt in ['Co']:
@@ -108,17 +111,23 @@ for i, txt in enumerate(names):
         y_txt -= 0.008
     if txt in ['Sm']:
         x_txt += 200
-        y_txt -= 0.015
-    if txt in ['La']:
+        y_txt -= 0.01
+    if txt in ['La', 'Si']:
         x_txt -= 50
     if txt in ['V']:
+        y_txt -= 0.005
         x_txt -= 20
+    if txt in ['La']:
+        y_txt += 0.01
     #text below
-    if txt in ['Ca', 'Ce', 'Mg', 'Eu']:
+    if txt in ['Mg', 'Eu', 'Ce']:
         y_txt = min(-abund[i], -abund_gce[i]) - 0.02
+    if txt in ['Ca']:
+        y_txt = min(-abund[i], -abund_gce[i]) - 0.03
+        x_txt += 30
     if txt in ['Dy']:
-        y_txt = min(-abund[i], -abund_gce[i]) - 0.015
-        x_txt += 50
+        y_txt = min(-abund[i], -abund_gce[i]) - 0.02
+        x_txt += 70
     if txt in ['Ba']:
         y_txt = min(-abund[i], -abund_gce[i]) - 0.01
         x_txt -= 50
@@ -126,20 +135,20 @@ for i, txt in enumerate(names):
         y_txt = min(-abund[i], -abund_gce[i]) - 0.02
         x_txt -= 80
     if txt in [ 'Gd']:
-        y_txt = min(-abund[i], -abund_gce[i]) - 0.018
-        x_txt += 80
+        y_txt = min(-abund[i], -abund_gce[i]) - 0.025
+        x_txt += 90
     if txt in ['Al']:
-        y_txt = min(-abund[i], -abund_gce[i]) - 0.015
-        x_txt += 80
+        y_txt = min(-abund[i], -abund_gce[i]) - 0.018
+        x_txt += 100
     if txt in ['Nd']:
-        y_txt = min(-abund[i], -abund_gce[i]) - 0.02
+        y_txt = min(-abund[i], -abund_gce[i]) - 0.025
         x_txt += 30
     
     x_linept, x_linetxt = Tc[i], x_txt   
     y_linept1, y_linept2, y_linetxt = -abund[i], -abund_gce[i], y_txt 
-    ax.plot([x_linept, x_linetxt], [y_linept1, y_linetxt], color='k', alpha=0.2, lw=1)
-    ax.plot([x_linept, x_linetxt], [y_linept2, y_linetxt], color='k', alpha=0.2, lw=1)
-    ax.text(x_txt, y_txt, txt, ha='center', va='center', fontsize='small', 
+    ax.plot([x_linept, x_linetxt], [y_linept1, y_linetxt], color='k', alpha=0.4, lw=1)
+    ax.plot([x_linept, x_linetxt], [y_linept2, y_linetxt], color='k', alpha=0.4, lw=1)
+    ax.text(x_txt, y_txt, txt, ha='center', va='center', fontsize=18, 
             bbox={'fc':'white', 'ec':'none', 'alpha':0.8, 'pad':1})
 
 
@@ -147,10 +156,12 @@ ax.set_ylim([-0.12,0.12])
 ax.set_yticks(np.arange(-0.10,0.12,0.05))
 ax.set_yticks(np.arange(-0.12,0.12,0.01), minor=True)
 ax.set_xticks(np.arange(0,1800,250))
-ax.set_xticks(np.arange(0,1850,50), minor=True)
+ax.set_xticks(np.arange(0,1900,50), minor=True)
+ax.tick_params(length=10., width=2, labelsize=16, which='major', pad=8)
+ax.tick_params(length=7., width=1.7, which='minor') 
 
-ax.legend(loc='upper right', frameon=True)
-ax.set_xlabel(r'$T_\mathrm{C}$ (K)')
-plt.ylabel(r'Sun - [X/Fe]$_{<twin>}$')
+ax.legend(loc='upper right', frameon=True, fontsize=20)
+ax.set_xlabel(r'$T_\mathrm{C}$ (K)', fontsize=20)
+ax.set_ylabel(r'Sun - [X/Fe]$_{<twin>}$', fontsize=20)
 
 fig.savefig('avgtwin_w_ncapture.pdf')

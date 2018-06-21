@@ -55,14 +55,16 @@ for i,el in enumerate(elements):
         abund = a[el+"II_1"][:-1] - par['feh'][:-1] # exclude sun
         err = a["err_"+el+'II'][:-1]
 
-    ax.errorbar(age[inv], abund[inv], xerr=age_err[inv], yerr=err[inv], fmt='D', c=c3, ecolor=c3, ms=2, elinewidth=0.6, alpha=0.8)
-    ax.errorbar(age[fit], abund[fit], xerr=age_err[fit], yerr=err[fit], fmt='o', c='black', ecolor='black', mec='black', ms=2, elinewidth=0.6)
-    ax.annotate(r'$\odot$', xy=(4.6, -0.01), horizontalalignment='center', verticalalignment='center', color=c4, fontsize=8, weight='bold')
+    ax.errorbar(age[fit], abund[fit], xerr=age_err[fit], yerr=err[fit], ls='None', marker=(1,3,0), mfc='black', 
+                ecolor='black', mec='black', mew=0.6, ms=2., elinewidth=0.6)
+    ax.errorbar(age[inv], abund[inv], xerr=age_err[inv], yerr=err[inv], ls='None', marker=(4,0,0), mfc=c3, 
+                ecolor=c3, mec=c3, mew=0.4, ms=2.5, elinewidth=0.4)
+    ax.annotate(r'$\odot$', xy=(4.6, -0.005), horizontalalignment='center', verticalalignment='center', color=c4, fontsize=6, weight='bold')
 
     ax.plot(xs, ms[i]*xs + bs[i], color=c2, lw=1.0)
     
-    ax.tick_params(length=3, width=0.6, labelsize=5, which='major', pad=4)
-    ax.tick_params(length=2, width=0.4, which='minor')    
+    ax.tick_params(length=2.5, width=0.6, labelsize=5, which='major', pad=4)
+    ax.tick_params(length=1.5, width=0.4, which='minor')    
     ax.set_xticks(np.arange(0,11,2))
     ax.set_xticks(np.arange(0,11,1), minor=True)
     
@@ -70,12 +72,12 @@ for i,el in enumerate(elements):
     if i<20:
         ax.set_ylim([-0.2,0.25])
         ax.set_yticks(np.arange(-0.2,0.3,0.1))
-        ax.set_yticks(np.arange(-0.2,0.3,0.05), minor=True)
+        ax.set_yticks(np.arange(-0.2,0.3,0.025), minor=True)
         ax.text(1.0,0.15, el, size=8)
     else:
         ax.set_ylim([-0.15,0.45])
         ax.set_yticks(np.arange(-0.1,0.5,0.1))
-        ax.set_yticks(np.arange(-0.15,0.5,0.05), minor=True)
+        ax.set_yticks(np.arange(-0.15,0.5,0.025), minor=True)
         ax.text(1.0,0.3, el, size=8)
     
     if el in ['C', 'Cr', 'Sc', 'Ti']:
@@ -85,11 +87,11 @@ for i,el in enumerate(elements):
             el2 = el+'II'
         abund = a[el2+"_1"][:-1] - par['feh'][:-1] # exclude sun
         err = a["err_"+el2][:-1]
-        ax.errorbar(age[inv], abund[inv], xerr=age_err[inv], yerr=err[inv], ls='None', marker=(4,0,0), mfc='None', 
-                    ecolor=c3, mec=c3, mew=0.3, ms=2, elinewidth=0.4)
+
         ax.errorbar(age[fit], abund[fit], xerr=age_err[fit], yerr=err[fit], ls='None', marker=(1,3,0), mfc='None', 
-                    ecolor='black', mec='black', mew=0.6, ms=2.2, elinewidth=0.6)
-        
+                    ecolor='black', mec='black', mew=0.6, ms=2., elinewidth=0.6)
+        ax.errorbar(age[inv], abund[inv], xerr=age_err[inv], yerr=err[inv], ls='None', marker=(4,0,0), mfc='None', 
+                    ecolor=c3, mec=c3, mew=0.4, ms=2.5, elinewidth=0.4)        
 
     if (i % 5) != 0:
         ax.set_yticklabels('',visible=False)

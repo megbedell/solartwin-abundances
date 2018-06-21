@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import q2
 
 
 if __name__ == "__main__":
@@ -42,6 +41,9 @@ if __name__ == "__main__":
         names_all = np.append(names_all, 'err_{0}'.format(el))
     
     header = np.array2string(names_all, separator=',', max_line_width=5000)    
+    header = str.replace(header, '\'', '')
+    header = str.lstrip(header, '[')
+    header = str.rstrip(header, ']')
     np.savetxt('harpstwins_gcecorrected_w_ncapture.csv', abund_all, fmt='%s', delimiter=',', header=header)
     
     # NOTE: this does not save perfectly! must go in and reformat header + paste in star IDs

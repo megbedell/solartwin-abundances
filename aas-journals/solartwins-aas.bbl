@@ -1,54 +1,65 @@
  \newcommand{\noop}[1]{}
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
 
-\bibitem[{{Adibekyan} {et~al.}(2015{\natexlab{a}}){Adibekyan}, {Santos},
-  {Figueira}, {Dorn}, {Sousa}, {Delgado-Mena}, {Israelian}, {Hakobyan}, \&
-  {Mordasini}}]{Adibekyan2015a}
-{Adibekyan}, V., {Santos}, N.~C., {Figueira}, P., {et~al.} 2015{\natexlab{a}},
-  \aap, 581, L2
-
-\bibitem[{{Adibekyan} {et~al.}(2015{\natexlab{b}}){Adibekyan}, {Figueira},
+\bibitem[{{Adibekyan} {et~al.}(2015{\natexlab{a}}){Adibekyan}, {Figueira},
   {Santos}, {Sousa}, {Faria}, {Delgado-Mena}, {Oshagh}, {Tsantaki}, {Hakobyan},
   {Gonz{\'a}lez Hern{\'a}ndez}, {Su{\'a}rez-Andr{\'e}s}, \&
   {Israelian}}]{adibekyan15}
-{Adibekyan}, V., {Figueira}, P., {Santos}, N.~C., {et~al.} 2015{\natexlab{b}},
-  \aap, 583, A94
+{Adibekyan}, V., {Figueira}, P., {Santos}, N.~C., {et~al.} 2015{\natexlab{a}},
+  \aap, 583, A94, \dodoi{10.1051/0004-6361/201527120}
+
+\bibitem[{{Adibekyan} {et~al.}(2015{\natexlab{b}}){Adibekyan}, {Santos},
+  {Figueira}, {Dorn}, {Sousa}, {Delgado-Mena}, {Israelian}, {Hakobyan}, \&
+  {Mordasini}}]{Adibekyan2015a}
+{Adibekyan}, V., {Santos}, N.~C., {Figueira}, P., {et~al.} 2015{\natexlab{b}},
+  \aap, 581, L2, \dodoi{10.1051/0004-6361/201527059}
 
 \bibitem[{{Adibekyan} {et~al.}(2016){Adibekyan}, {Delgado-Mena}, {Figueira},
   {Sousa}, {Santos}, {Faria}, {Gonz{\'a}lez Hern{\'a}ndez}, {Israelian},
   {Harutyunyan}, {Su{\'a}rez-Andr{\'e}s}, \& {Hakobyan}}]{adibekyan16}
 {Adibekyan}, V., {Delgado-Mena}, E., {Figueira}, P., {et~al.} 2016, \aap, 591,
-  A34
+  A34, \dodoi{10.1051/0004-6361/201628453}
 
 \bibitem[{{Adibekyan} {et~al.}(2014){Adibekyan}, {Gonz{\'a}lez Hern{\'a}ndez},
   {Delgado Mena}, {Sousa}, {Santos}, {Israelian}, {Figueira}, \& {Bertran de
   Lis}}]{adibekyan14}
 {Adibekyan}, V.~Z., {Gonz{\'a}lez Hern{\'a}ndez}, J.~I., {Delgado Mena}, E.,
-  {et~al.} 2014, \aap, 564, L15
+  {et~al.} 2014, \aap, 564, L15, \dodoi{10.1051/0004-6361/201423435}
 
 \bibitem[{{Adibekyan} {et~al.}(2012){Adibekyan}, {Sousa}, {Santos}, {Delgado
   Mena}, {Gonz{\'a}lez Hern{\'a}ndez}, {Israelian}, {Mayor}, \&
   {Khachatryan}}]{adibekyan12}
 {Adibekyan}, V.~Z., {Sousa}, S.~G., {Santos}, N.~C., {et~al.} 2012, \aap, 545,
-  A32
+  A32, \dodoi{10.1051/0004-6361/201219401}
 
 \bibitem[{{Asplund} {et~al.}(2009){Asplund}, {Grevesse}, {Sauval}, \&
   {Scott}}]{asplund09}
 {Asplund}, M., {Grevesse}, N., {Sauval}, A.~J., \& {Scott}, P. 2009, \araa, 47,
-  481
+  481, \dodoi{10.1146/annurev.astro.46.060407.145222}
 
 \bibitem[{{Baumann} {et~al.}(2010){Baumann}, {Ram{\'{\i}}rez}, {Mel{\'e}ndez},
   {Asplund}, \& {Lind}}]{baumann10}
 {Baumann}, P., {Ram{\'{\i}}rez}, I., {Mel{\'e}ndez}, J., {Asplund}, M., \&
-  {Lind}, K. 2010, \aap, 519, A87
+  {Lind}, K. 2010, \aap, 519, A87, \dodoi{10.1051/0004-6361/201015137}
 
 \bibitem[{{Bedell} {et~al.}(2014){Bedell}, {Mel{\'e}ndez}, {Bean},
   {Ram{\'{\i}}rez}, {Leite}, \& {Asplund}}]{bedell14}
-{Bedell}, M., {Mel{\'e}ndez}, J., {Bean}, J.~L., {et~al.} 2014, \apj, 795, 23
+{Bedell}, M., {Mel{\'e}ndez}, J., {Bean}, J.~L., {et~al.} 2014, \apj, 795, 23,
+  \dodoi{10.1088/0004-637X/795/1/23}
+
+\bibitem[{{Bedell} {et~al.}(2015){Bedell}, {Mel{\'e}ndez}, {Bean},
+  {Ram{\'\i}rez}, {Asplund}, {Alves-Brito}, {Casagrande}, {Dreizler}, {Monroe},
+  {Spina}, \& {Tucci Maia}}]{bedell15}
+---. 2015, \aap, 581, A34, \dodoi{10.1051/0004-6361/201525748}
 
 \bibitem[{{Bensby} {et~al.}(2014){Bensby}, {Feltzing}, \& {Oey}}]{bensby14}
-{Bensby}, T., {Feltzing}, S., \& {Oey}, M.~S. 2014, \aap, 562, A71
+{Bensby}, T., {Feltzing}, S., \& {Oey}, M.~S. 2014, \aap, 562, A71,
+  \dodoi{10.1051/0004-6361/201322631}
 
 \bibitem[{{Bensby} {et~al.}(2017){Bensby}, {Feltzing}, {Gould}, {Yee},
   {Johnson}, {Asplund}, {Mel{\'e}ndez}, {Lucatello}, {Howes}, {McWilliam},
@@ -56,7 +67,8 @@
   {Ulaczyk}, {Koz{\l}owski}, {Pietrukowicz}, {Skowron}, {Mr{\'o}z}, {Pawlak},
   {Abe}, {Asakura}, {Bhattacharya}, {Bond}, {Bennett}, {Hirao}, {Nagakane},
   {Koshimoto}, {Sumi}, {Suzuki}, \& {Tristram}}]{bensby17}
-{Bensby}, T., {Feltzing}, S., {Gould}, A., {et~al.} 2017, \aap, 605, A89
+{Bensby}, T., {Feltzing}, S., {Gould}, A., {et~al.} 2017, \aap, 605, A89,
+  \dodoi{10.1051/0004-6361/201730560}
 
 \bibitem[{{Bernstein} {et~al.}(2003){Bernstein}, {Shectman}, {Gunnels},
   {Mochnacki}, \& {Athey}}]{bernstein03}
@@ -67,126 +79,146 @@
   {Moorwood}, 1694--1704
 
 \bibitem[{{Bond} {et~al.}(2010){Bond}, {O'Brien}, \& {Lauretta}}]{bond10}
-{Bond}, J.~C., {O'Brien}, D.~P., \& {Lauretta}, D.~S. 2010, \apj, 715, 1050
+{Bond}, J.~C., {O'Brien}, D.~P., \& {Lauretta}, D.~S. 2010, \apj, 715, 1050,
+  \dodoi{10.1088/0004-637X/715/2/1050}
 
-\bibitem[{{Brewer} \& {Fischer}(2016{\natexlab{a}})}]{brewer16}
-{Brewer}, J.~M., \& {Fischer}, D.~A. 2016{\natexlab{a}}, \apj, 831, 20
-
-\bibitem[{{Brewer} \& {Fischer}(2016{\natexlab{b}})}]{brewer16b}
----. 2016{\natexlab{b}}, \apj, 831, 20
+\bibitem[{{Brewer} \& {Fischer}(2016)}]{brewer16}
+{Brewer}, J.~M., \& {Fischer}, D.~A. 2016, \apj, 831, 20,
+  \dodoi{10.3847/0004-637X/831/1/20}
 
 \bibitem[{{Burbidge} {et~al.}(1957){Burbidge}, {Burbidge}, {Fowler}, \&
   {Hoyle}}]{Burbidge1957}
 {Burbidge}, E.~M., {Burbidge}, G.~R., {Fowler}, W.~A., \& {Hoyle}, F. 1957,
-  Reviews of Modern Physics, 29, 547
+  Reviews of Modern Physics, 29, 547, \dodoi{10.1103/RevModPhys.29.547}
 
 \bibitem[{{Carter-Bond} {et~al.}(2012){Carter-Bond}, {O'Brien}, {Delgado Mena},
   {Israelian}, {Santos}, \& {Gonz{\'a}lez Hern{\'a}ndez}}]{carter-bond12}
 {Carter-Bond}, J.~C., {O'Brien}, D.~P., {Delgado Mena}, E., {et~al.} 2012,
-  \apjl, 747, L2
+  \apjl, 747, L2, \dodoi{10.1088/2041-8205/747/1/L2}
+
+\bibitem[{{Casagrande} {et~al.}(2011){Casagrande}, {Sch{\"o}nrich}, {Asplund},
+  {Cassisi}, {Ram{\'{\i}}rez}, {Mel{\'e}ndez}, {Bensby}, \&
+  {Feltzing}}]{Casagrande2011}
+{Casagrande}, L., {Sch{\"o}nrich}, R., {Asplund}, M., {et~al.} 2011, \aap, 530,
+  A138, \dodoi{10.1051/0004-6361/201016276}
 
 \bibitem[{{Castelli} \& {Kurucz}(2004)}]{castelli04}
-{Castelli}, F., \& {Kurucz}, R.~L. 2004, ArXiv Astrophysics e-prints,
-  astro-ph/0405087
+{Castelli}, F., \& {Kurucz}, R.~L. 2004, ArXiv Astrophysics e-prints
 
 \bibitem[{{Chambers}(2010)}]{chambers10}
-{Chambers}, J.~E. 2010, \apj, 724, 92
+{Chambers}, J.~E. 2010, \apj, 724, 92, \dodoi{10.1088/0004-637X/724/1/92}
 
 \bibitem[{{Delgado Mena} {et~al.}(2010){Delgado Mena}, {Israelian},
   {Gonz{\'a}lez Hern{\'a}ndez}, {Bond}, {Santos}, {Udry}, \&
   {Mayor}}]{delgado10}
 {Delgado Mena}, E., {Israelian}, G., {Gonz{\'a}lez Hern{\'a}ndez}, J.~I.,
-  {et~al.} 2010, \apj, 725, 2349
+  {et~al.} 2010, \apj, 725, 2349, \dodoi{10.1088/0004-637X/725/2/2349}
 
 \bibitem[{{Demarque} {et~al.}(2004){Demarque}, {Woo}, {Kim}, \& {Yi}}]{yy}
 {Demarque}, P., {Woo}, J.-H., {Kim}, Y.-C., \& {Yi}, S.~K. 2004, \apjs, 155,
-  667
+  667, \dodoi{10.1086/424966}
+
+\bibitem[{{Dorn} {et~al.}(2015){Dorn}, {Khan}, {Heng}, {Connolly}, {Alibert},
+  {Benz}, \& {Tackley}}]{dorn15}
+{Dorn}, C., {Khan}, A., {Heng}, K., {et~al.} 2015, \aap, 577, A83,
+  \dodoi{10.1051/0004-6361/201424915}
 
 \bibitem[{{dos Santos} {et~al.}(2017){dos Santos}, {Mel{\'e}ndez}, {Bedell},
   {Bean}, {Spina}, {Alves-Brito}, {Dreizler}, {Ram{\'{\i}}rez}, \&
   {Asplund}}]{dosSantos17}
 {dos Santos}, L.~A., {Mel{\'e}ndez}, J., {Bedell}, M., {et~al.} 2017, \mnras,
-  472, 3425
+  472, 3425, \dodoi{10.1093/mnras/stx2199}
 
 \bibitem[{{Dotter} {et~al.}(2017){Dotter}, {Conroy}, {Cargile}, \&
   {Asplund}}]{dotter17}
-{Dotter}, A., {Conroy}, C., {Cargile}, P., \& {Asplund}, M. 2017, \apj, 840, 99
+{Dotter}, A., {Conroy}, C., {Cargile}, P., \& {Asplund}, M. 2017, \apj, 840,
+  99, \dodoi{10.3847/1538-4357/aa6d10}
 
 \bibitem[{{Fischer} \& {Valenti}(2005)}]{fischer05}
-{Fischer}, D.~A., \& {Valenti}, J. 2005, \apj, 622, 1102
+{Fischer}, D.~A., \& {Valenti}, J. 2005, \apj, 622, 1102,
+  \dodoi{10.1086/428383}
 
 \bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
   {Goodman}}]{emcee}
 {Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, PASP,
-  125, 306
+  125, 306, \dodoi{10.1086/670067}
 
 \bibitem[{{Fortney}(2012)}]{fortney12}
-{Fortney}, J.~J. 2012, \apjl, 747, L27
+{Fortney}, J.~J. 2012, \apjl, 747, L27, \dodoi{10.1088/2041-8205/747/2/L27}
 
 \bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Brown},
   {Vallenari}, {Prusti}, {de Bruijne}, {Mignard}, {Drimmel}, {Babusiaux},
   {Bailer-Jones}, {Bastian}, \& et~al.}]{gaiaDR1}
 {Gaia Collaboration}, {Brown}, A.~G.~A., {Vallenari}, A., {et~al.} 2016, \aap,
-  595, A2
+  595, A2, \dodoi{10.1051/0004-6361/201629512}
 
 \bibitem[{{Gaidos}(2015)}]{gaidos15}
-{Gaidos}, E. 2015, \apj, 804, 40
+{Gaidos}, E. 2015, \apj, 804, 40, \dodoi{10.1088/0004-637X/804/1/40}
 
 \bibitem[{{Gilmore} {et~al.}(1989){Gilmore}, {Wyse}, \& {Kuijken}}]{gilmore89}
-{Gilmore}, G., {Wyse}, R.~F.~G., \& {Kuijken}, K. 1989, \araa, 27, 555
+{Gilmore}, G., {Wyse}, R.~F.~G., \& {Kuijken}, K. 1989, \araa, 27, 555,
+  \dodoi{10.1146/annurev.aa.27.090189.003011}
 
 \bibitem[{{Gonzalez}(1997)}]{gonzalez97}
-{Gonzalez}, G. 1997, \mnras, 285, 403
+{Gonzalez}, G. 1997, \mnras, 285, 403, \dodoi{10.1093/mnras/285.2.403}
 
 \bibitem[{{Gonzalez}(2011)}]{Gonzalez2011}
----. 2011, \mnras, 416, L80
+---. 2011, \mnras, 416, L80, \dodoi{10.1111/j.1745-3933.2011.01102.x}
 
 \bibitem[{{Gonzalez} {et~al.}(2010){Gonzalez}, {Carlson}, \&
   {Tobin}}]{Gonzalez2010}
-{Gonzalez}, G., {Carlson}, M.~K., \& {Tobin}, R.~W. 2010, \mnras, 407, 314
+{Gonzalez}, G., {Carlson}, M.~K., \& {Tobin}, R.~W. 2010, \mnras, 407, 314,
+  \dodoi{10.1111/j.1365-2966.2010.16900.x}
 
 \bibitem[{{Gonz{\'a}lez Hern{\'a}ndez} {et~al.}(2013){Gonz{\'a}lez
   Hern{\'a}ndez}, {Delgado-Mena}, {Sousa}, {Israelian}, {Santos}, {Adibekyan},
   \& {Udry}}]{GonzalezHernandez2013}
 {Gonz{\'a}lez Hern{\'a}ndez}, J.~I., {Delgado-Mena}, E., {Sousa}, S.~G.,
-  {et~al.} 2013, \aap, 552, A6
+  {et~al.} 2013, \aap, 552, A6, \dodoi{10.1051/0004-6361/201220165}
 
 \bibitem[{{Gonz{\'a}lez Hern{\'a}ndez} {et~al.}(2010){Gonz{\'a}lez
   Hern{\'a}ndez}, {Israelian}, {Santos}, {Sousa}, {Delgado-Mena}, {Neves}, \&
   {Udry}}]{GonzalezHernandez2010}
 {Gonz{\'a}lez Hern{\'a}ndez}, J.~I., {Israelian}, G., {Santos}, N.~C., {et~al.}
-  2010, \apj, 720, 1592
+  2010, \apj, 720, 1592, \dodoi{10.1088/0004-637X/720/2/1592}
 
 \bibitem[{{Hinkel} {et~al.}(2016){Hinkel}, {Young}, {Pagano}, {Desch}, {Anbar},
   {Adibekyan}, {Blanco-Cuaresma}, {Carlberg}, {Delgado Mena}, {Liu},
   {Nordlander}, {Sousa}, {Korn}, {Gruyters}, {Heiter}, {Jofr{\'e}}, {Santos},
   \& {Soubiran}}]{hinkel16}
-{Hinkel}, N.~R., {Young}, P.~A., {Pagano}, M.~D., {et~al.} 2016, \apjs, 226, 4
+{Hinkel}, N.~R., {Young}, P.~A., {Pagano}, M.~D., {et~al.} 2016, \apjs, 226, 4,
+  \dodoi{10.3847/0067-0049/226/1/4}
 
 \bibitem[{{H{\o}g} {et~al.}(2000){H{\o}g}, {Fabricius}, {Makarov}, {Urban},
   {Corbin}, {Wycoff}, {Bastian}, {Schwekendiek}, \& {Wicenec}}]{Tycho2000}
 {H{\o}g}, E., {Fabricius}, C., {Makarov}, V.~V., {et~al.} 2000, \aap, 355, L27
 
 \bibitem[{{Hogg} {et~al.}(2010){Hogg}, {Bovy}, \& {Lang}}]{hogg10}
-{Hogg}, D.~W., {Bovy}, J., \& {Lang}, D. 2010, ArXiv e-prints, arXiv:1008.4686
+{Hogg}, D.~W., {Bovy}, J., \& {Lang}, D. 2010, ArXiv e-prints.
+\newblock \doarXiv{1008.4686}
 
 \bibitem[{{Hunter}(2007)}]{matplotlib}
-{Hunter}, J.~D. 2007, Computing in Science and Engineering, 9, 90
+{Hunter}, J.~D. 2007, Computing in Science and Engineering, 9, 90,
+  \dodoi{10.1109/MCSE.2007.55}
+
+\bibitem[{{Jones} {et~al.}(2006){Jones}, {Butler}, {Tinney}, {Marcy}, {Carter},
+  {Penny}, {McCarthy}, \& {Bailey}}]{Jones2006}
+{Jones}, H. R.~A., {Butler}, R.~P., {Tinney}, C.~G., {et~al.} 2006, \mnras,
+  369, 249, \dodoi{10.1111/j.1365-2966.2006.10298.x}
 
 \bibitem[{{Kharchenko} \& {Roeser}(2009)}]{ASCC2009}
 {Kharchenko}, N.~V., \& {Roeser}, S. 2009, VizieR Online Data Catalog, 1280
 
 \bibitem[{{Kuchner} \& {Seager}(2005)}]{kuchner05}
-{Kuchner}, M.~J., \& {Seager}, S. 2005, ArXiv Astrophysics e-prints,
-  astro-ph/0504214
+{Kuchner}, M.~J., \& {Seager}, S. 2005, ArXiv Astrophysics e-prints
 
 \bibitem[{{Lodders}(2003)}]{lodders03}
-{Lodders}, K. 2003, \apj, 591, 1220
+{Lodders}, K. 2003, \apj, 591, 1220, \dodoi{10.1086/375492}
 
 \bibitem[{{Madhusudhan} {et~al.}(2011){Madhusudhan}, {Mousis}, {Johnson}, \&
   {Lunine}}]{madhu11}
 {Madhusudhan}, N., {Mousis}, O., {Johnson}, T.~V., \& {Lunine}, J.~I. 2011,
-  \apj, 743, 191
+  \apj, 743, 191, \dodoi{10.1088/0004-637X/743/2/191}
 
 \bibitem[{{Mayor} {et~al.}(2003){Mayor}, {Pepe}, {Queloz}, {Bouchy},
   {Rupprecht}, {Lo Curto}, {Avila}, {Benz}, {Bertaux}, {Bonfils}, {Dall},
@@ -199,10 +231,11 @@
 \bibitem[{{Mel{\'e}ndez} {et~al.}(2009){Mel{\'e}ndez}, {Asplund}, {Gustafsson},
   \& {Yong}}]{melendez09}
 {Mel{\'e}ndez}, J., {Asplund}, M., {Gustafsson}, B., \& {Yong}, D. 2009, \apjl,
-  704, L66
+  704, L66, \dodoi{10.1088/0004-637X/704/1/L66}
 
 \bibitem[{{Mel{\'e}ndez} \& {Ram{\'{\i}}rez}(2007)}]{melendez07}
-{Mel{\'e}ndez}, J., \& {Ram{\'{\i}}rez}, I. 2007, \apjl, 669, L89
+{Mel{\'e}ndez}, J., \& {Ram{\'{\i}}rez}, I. 2007, \apjl, 669, L89,
+  \dodoi{10.1086/523942}
 
 \bibitem[{{Mel{\'e}ndez} {et~al.}(2015){Mel{\'e}ndez}, {Bean}, {Bedell},
   {Ram{\'{\i}}rez}, {Asplund}, {Dreizler}, {Alves-Brito}, {Spina},
@@ -210,98 +243,139 @@
 {Mel{\'e}ndez}, J., {Bean}, J.~L., {Bedell}, M., {et~al.} 2015, The Messenger,
   161, 28
 
+\bibitem[{{Mel{\'e}ndez} {et~al.}(2017){Mel{\'e}ndez}, {Bedell}, {Bean},
+  {Ram{\'\i}rez}, {Asplund}, {Dreizler}, {Yan}, {Shi}, {Lind}, {Ferraz-Mello},
+  {Galarza}, {dos Santos}, {Spina}, {Maia}, {Alves-Brito}, {Monroe}, \&
+  {Casagrande}}]{melendez17}
+{Mel{\'e}ndez}, J., {Bedell}, M., {Bean}, J.~L., {et~al.} 2017, \aap, 597, A34,
+  \dodoi{10.1051/0004-6361/201527775}
+
+\bibitem[{{Naef} {et~al.}(2010){Naef}, {Mayor}, {Lo Curto}, {Bouchy}, {Lovis},
+  {Moutou}, {Benz}, {Pepe}, {Queloz}, {Santos}, {S{\'e}gransan}, {Udry},
+  {Bonfils}, {Delfosse}, {Forveille}, {H{\'e}brard}, {Mordasini}, {Perrier},
+  {Boisse}, \& {Sosnowska}}]{naef10}
+{Naef}, D., {Mayor}, M., {Lo Curto}, G., {et~al.} 2010, \aap, 523, A15,
+  \dodoi{10.1051/0004-6361/200913616}
+
 \bibitem[{{Nissen}(2015)}]{nissen15}
-{Nissen}, P.~E. 2015, \aap, 579, A52
+{Nissen}, P.~E. 2015, \aap, 579, A52, \dodoi{10.1051/0004-6361/201526269}
 
 \bibitem[{{Nissen}(2016)}]{nissen16}
----. 2016, \aap, 593, A65
+---. 2016, \aap, 593, A65, \dodoi{10.1051/0004-6361/201628888}
 
 \bibitem[{{{\"O}berg} {et~al.}(2011){{\"O}berg}, {Murray-Clay}, \&
   {Bergin}}]{oberg11}
-{{\"O}berg}, K.~I., {Murray-Clay}, R., \& {Bergin}, E.~A. 2011, \apjl, 743, L16
+{{\"O}berg}, K.~I., {Murray-Clay}, R., \& {Bergin}, E.~A. 2011, \apjl, 743,
+  L16, \dodoi{10.1088/2041-8205/743/1/L16}
 
 \bibitem[{{Oh} {et~al.}(2017){Oh}, {Price-Whelan}, {Brewer}, {Hogg}, {Spergel},
   \& {Myles}}]{oh17}
 {Oh}, S., {Price-Whelan}, A.~M., {Brewer}, J.~M., {et~al.} 2017, ArXiv
-  e-prints, arXiv:1709.05344
+  e-prints.
+\newblock \doarXiv{1709.05344}
 
 \bibitem[{{{\"O}nehag} {et~al.}(2014){{\"O}nehag}, {Gustafsson}, \&
   {Korn}}]{onehag14}
-{{\"O}nehag}, A., {Gustafsson}, B., \& {Korn}, A. 2014, \aap, 562, A102
+{{\"O}nehag}, A., {Gustafsson}, B., \& {Korn}, A. 2014, \aap, 562, A102,
+  \dodoi{10.1051/0004-6361/201322663}
 
 \bibitem[{{Petigura} \& {Marcy}(2011)}]{petigura11}
-{Petigura}, E.~A., \& {Marcy}, G.~W. 2011, \apj, 735, 41
+{Petigura}, E.~A., \& {Marcy}, G.~W. 2011, \apj, 735, 41,
+  \dodoi{10.1088/0004-637X/735/1/41}
 
 \bibitem[{{Ram{\'{\i}}rez} {et~al.}(2013){Ram{\'{\i}}rez}, {Allende Prieto}, \&
   {Lambert}}]{ramirez13}
 {Ram{\'{\i}}rez}, I., {Allende Prieto}, C., \& {Lambert}, D.~L. 2013, \apj,
-  764, 78
+  764, 78, \dodoi{10.1088/0004-637X/764/1/78}
 
 \bibitem[{{Ram{\'{\i}}rez} {et~al.}(2010){Ram{\'{\i}}rez}, {Asplund},
   {Baumann}, {Mel{\'e}ndez}, \& {Bensby}}]{ramirez10}
 {Ram{\'{\i}}rez}, I., {Asplund}, M., {Baumann}, P., {Mel{\'e}ndez}, J., \&
-  {Bensby}, T. 2010, \aap, 521, A33
+  {Bensby}, T. 2010, \aap, 521, A33, \dodoi{10.1051/0004-6361/201014456}
 
 \bibitem[{{Ram{\'{\i}}rez} {et~al.}(2009){Ram{\'{\i}}rez}, {Mel{\'e}ndez}, \&
   {Asplund}}]{ramirez09}
-{Ram{\'{\i}}rez}, I., {Mel{\'e}ndez}, J., \& {Asplund}, M. 2009, \aap, 508, L17
+{Ram{\'{\i}}rez}, I., {Mel{\'e}ndez}, J., \& {Asplund}, M. 2009, \aap, 508,
+  L17, \dodoi{10.1051/0004-6361/200913038}
 
 \bibitem[{{Ram{\'{\i}}rez} {et~al.}(2011){Ram{\'{\i}}rez}, {Mel{\'e}ndez},
   {Cornejo}, {Roederer}, \& {Fish}}]{ramirez11}
 {Ram{\'{\i}}rez}, I., {Mel{\'e}ndez}, J., {Cornejo}, D., {Roederer}, I.~U., \&
-  {Fish}, J.~R. 2011, \apj, 740, 76
+  {Fish}, J.~R. 2011, \apj, 740, 76, \dodoi{10.1088/0004-637X/740/2/76}
 
 \bibitem[{{Ram{\'{\i}}rez} {et~al.}(2014){Ram{\'{\i}}rez}, {Mel{\'e}ndez},
   {Bean}, {Asplund}, {Bedell}, {Monroe}, {Casagrande}, {Schirbel}, {Dreizler},
   {Teske}, {Tucci Maia}, {Alves-Brito}, \& {Baumann}}]{ramirez14}
 {Ram{\'{\i}}rez}, I., {Mel{\'e}ndez}, J., {Bean}, J., {et~al.} 2014, \aap, 572,
-  A48
+  A48, \dodoi{10.1051/0004-6361/201424244}
 
 \bibitem[{{Rogers}(2015)}]{rogers15}
-{Rogers}, L.~A. 2015, \apj, 801, 41
+{Rogers}, L.~A. 2015, \apj, 801, 41, \dodoi{10.1088/0004-637X/801/1/41}
+
+\bibitem[{{Santos} {et~al.}(2015){Santos}, {Adibekyan}, {Mordasini}, {Benz},
+  {Delgado-Mena}, {Dorn}, {Buchhave}, {Figueira}, {Mortier}, {Pepe},
+  {Santerne}, {Sousa}, \& {Udry}}]{santos15}
+{Santos}, N.~C., {Adibekyan}, V., {Mordasini}, C., {et~al.} 2015, \aap, 580,
+  L13, \dodoi{10.1051/0004-6361/201526850}
+
+\bibitem[{{Santos} {et~al.}(2017){Santos}, {Adibekyan}, {Dorn}, {Mordasini},
+  {Noack}, {Barros}, {Delgado-Mena}, {Demangeon}, {Faria}, {Israelian}, \&
+  {Sousa}}]{Santos2017}
+{Santos}, N.~C., {Adibekyan}, V., {Dorn}, C., {et~al.} 2017, \aap, 608, A94,
+  \dodoi{10.1051/0004-6361/201731359}
 
 \bibitem[{{Schuler} {et~al.}(2011){Schuler}, {Flateau}, {Cunha}, {King},
   {Ghezzi}, \& {Smith}}]{Schuler2011b}
-{Schuler}, S.~C., {Flateau}, D., {Cunha}, K., {et~al.} 2011, \apj, 732, 55
+{Schuler}, S.~C., {Flateau}, D., {Cunha}, K., {et~al.} 2011, \apj, 732, 55,
+  \dodoi{10.1088/0004-637X/732/1/55}
 
 \bibitem[{{Sneden}(1973)}]{sneden73}
 {Sneden}, C.~A. 1973, PhD thesis, THE UNIVERSITY OF TEXAS AT AUSTIN.
 
 \bibitem[{{Sotin} {et~al.}(2007){Sotin}, {Grasset}, \& {Mocquet}}]{Sotin2007}
-{Sotin}, C., {Grasset}, O., \& {Mocquet}, A. 2007, Icarus, 191, 337
+{Sotin}, C., {Grasset}, O., \& {Mocquet}, A. 2007, Icarus, 191, 337,
+  \dodoi{10.1016/j.icarus.2007.04.006}
 
 \bibitem[{{Spina} {et~al.}(2016{\natexlab{a}}){Spina}, {Mel{\'e}ndez},
   {Karakas}, {Ram{\'{\i}}rez}, {Monroe}, {Asplund}, \& {Yong}}]{spina16b}
 {Spina}, L., {Mel{\'e}ndez}, J., {Karakas}, A.~I., {et~al.} 2016{\natexlab{a}},
-  \aap, 593, A125
+  \aap, 593, A125, \dodoi{10.1051/0004-6361/201628557}
 
 \bibitem[{{Spina} {et~al.}(2016{\natexlab{b}}){Spina}, {Mel{\'e}ndez}, \&
   {Ram{\'{\i}}rez}}]{spina16}
 {Spina}, L., {Mel{\'e}ndez}, J., \& {Ram{\'{\i}}rez}, I. 2016{\natexlab{b}},
-  \aap, 585, A152
+  \aap, 585, A152, \dodoi{10.1051/0004-6361/201527429}
 
 \bibitem[{{Spina} {et~al.}(2015){Spina}, {Palla}, {Randich}, {Sacco},
   {Jeffries}, {Magrini}, {Franciosini}, {Meyer}, {Tautvai{\v s}ien{\.e}},
   {Gilmore}, {Alfaro}, {Allende Prieto}, {Bensby}, {Bragaglia}, {Flaccomio},
   {Koposov}, {Lanzafame}, {Costado}, {Hourihane}, {Lardo}, {Lewis}, {Monaco},
   {Morbidelli}, {Sousa}, {Worley}, \& {Zaggia}}]{spina15}
-{Spina}, L., {Palla}, F., {Randich}, S., {et~al.} 2015, \aap, 582, L6
+{Spina}, L., {Palla}, F., {Randich}, S., {et~al.} 2015, \aap, 582, L6,
+  \dodoi{10.1051/0004-6361/201526896}
 
 \bibitem[{{Spina} {et~al.}(2018){Spina}, {Mel{\'e}ndez}, {Karakas}, {dos
   Santos}, {Bedell}, {Asplund}, {Ram{\'{\i}}rez}, {Yong}, {Alves-Brito},
   {Bean}, \& {Dreizler}}]{spina17}
 {Spina}, L., {Mel{\'e}ndez}, J., {Karakas}, A.~I., {et~al.} 2018, \mnras, 474,
-  2580
+  2580, \dodoi{10.1093/mnras/stx2938}
 
 \bibitem[{{Su{\'a}rez-Andr{\'e}s} {et~al.}(2018){Su{\'a}rez-Andr{\'e}s},
   {Israelian}, {Gonz{\'a}lez Hern{\'a}ndez}, {Adibekyan}, {Delgado Mena},
   {Santos}, \& {Sousa}}]{suarez-andres18}
 {Su{\'a}rez-Andr{\'e}s}, L., {Israelian}, G., {Gonz{\'a}lez Hern{\'a}ndez},
-  J.~I., {et~al.} 2018, ArXiv e-prints, arXiv:1801.09474
+  J.~I., {et~al.} 2018, ArXiv e-prints.
+\newblock \doarXiv{1801.09474}
 
 \bibitem[{{Teske} {et~al.}(2016){Teske}, {Khanal}, \&
   {Ram{\'{\i}}rez}}]{teske16}
-{Teske}, J.~K., {Khanal}, S., \& {Ram{\'{\i}}rez}, I. 2016, \apj, 819, 19
+{Teske}, J.~K., {Khanal}, S., \& {Ram{\'{\i}}rez}, I. 2016, \apj, 819, 19,
+  \dodoi{10.3847/0004-637X/819/1/19}
+
+\bibitem[{{Thiabaud} {et~al.}(2015){Thiabaud}, {Marboeuf}, {Alibert}, {Leya},
+  \& {Mezger}}]{thiabaud15}
+{Thiabaud}, A., {Marboeuf}, U., {Alibert}, Y., {Leya}, I., \& {Mezger}, K.
+  2015, \aap, 580, A30, \dodoi{10.1051/0004-6361/201525963}
 
 \bibitem[{{Tody}(1986)}]{iraf}
 {Tody}, D. 1986, in \procspie, Vol. 627, Instrumentation in astronomy VI, ed.
@@ -310,25 +384,29 @@
 \bibitem[{{Unterborn} {et~al.}(2017){Unterborn}, {Hull}, {Stixrude}, {Teske},
   {Johnson}, \& {Panero}}]{unterborn17b}
 {Unterborn}, C.~T., {Hull}, S.~D., {Stixrude}, L.~P., {et~al.} 2017, ArXiv
-  e-prints, arXiv:1706.10282
+  e-prints.
+\newblock \doarXiv{1706.10282}
 
 \bibitem[{{Unterborn} {et~al.}(2014){Unterborn}, {Kabbes}, {Pigott}, {Reaman},
   \& {Panero}}]{unterborn14}
 {Unterborn}, C.~T., {Kabbes}, J.~E., {Pigott}, J.~S., {Reaman}, D.~M., \&
-  {Panero}, W.~R. 2014, \apj, 793, 124
+  {Panero}, W.~R. 2014, \apj, 793, 124, \dodoi{10.1088/0004-637X/793/2/124}
 
 \bibitem[{{Unterborn} \& {Panero}(2017)}]{unterborn17a}
-{Unterborn}, C.~T., \& {Panero}, W.~R. 2017, \apj, 845, 61
+{Unterborn}, C.~T., \& {Panero}, W.~R. 2017, \apj, 845, 61,
+  \dodoi{10.3847/1538-4357/aa7f79}
 
 \bibitem[{{Valenti} \& {Fischer}(2005)}]{valenti05}
-{Valenti}, J.~A., \& {Fischer}, D.~A. 2005, \apjs, 159, 141
+{Valenti}, J.~A., \& {Fischer}, D.~A. 2005, \apjs, 159, 141,
+  \dodoi{10.1086/430500}
 
 \bibitem[{van~der Walt {et~al.}(2011)van~der Walt, Colbert, \&
   Varoquaux}]{numpy}
 van~der Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
-  Engineering, 13, 22
+  Engineering, 13, 22, \dodoi{10.1109/MCSE.2011.37}
 
 \bibitem[{{Winn} \& {Fabrycky}(2015)}]{winn15}
-{Winn}, J.~N., \& {Fabrycky}, D.~C. 2015, \araa, 53, 409
+{Winn}, J.~N., \& {Fabrycky}, D.~C. 2015, \araa, 53, 409,
+  \dodoi{10.1146/annurev-astro-082214-122246}
 
 \end{thebibliography}
