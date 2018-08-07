@@ -9,7 +9,7 @@ def linear(x, m, b):
      model = m*x + b
      return model
      
-def percentile_uncertainty(value, xs, sigmas, Ntrial=8096):
+def percentile_uncertainty(value, xs, sigmas, Ntrial=int(2e4)):
     N = len(xs)
     assert len(sigmas) == N
     percentiles = np.zeros(Ntrial)

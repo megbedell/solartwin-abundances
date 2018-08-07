@@ -2,10 +2,10 @@ import numpy as np
 
 # equivalent width table headers
 
-root_dir = '/Users/mbedell/Documents/Research/HARPSTwins/Abundances/All/'
-a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True)
-gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True)
-linelist = np.genfromtxt(root_dir+'final_lines.csv', delimiter=',', dtype=None, names=True)
+root_dir = '/Users/mbedell/Documents/Papers/abundances-solartwins/data/'
+a = np.genfromtxt(root_dir+'final_abundances_w_ncapture.csv', delimiter=',', dtype=None, names=True, encoding=None)
+gce = np.genfromtxt(root_dir+'GCE/gce_linear_w_ncapture.txt', delimiter=',', dtype=None, names=True, encoding=None)
+linelist = np.genfromtxt(root_dir+'final_lines.csv', delimiter=',', dtype=None, names=True, encoding=None)
 f = open('../aas-journals/ews_table_header.txt', 'w')
 f_lbls = open('mrt_ews_labels.txt', 'w')
 f_units = open('mrt_ews_units.txt', 'w')
@@ -94,3 +94,12 @@ f.close()
 f_lbls.close()
 f_units.close()
 f_exps.close()
+
+# abundances table contents
+
+block = a['id'][:-1]
+for i,sp in enumerate(gce['element'][:21]):
+    block = np.vstack((block, a['{0}_1'.format(sp)][:-1]))
+    block = np.vstack((block, a['err_{0}'.format(sp)][:-1]))
+    
+np.savetxt('mrt_abunds_data.csv', block.T, delimiter=',', fmt='%s')
